@@ -1,6 +1,7 @@
 # Swagger Play 2.8.x Module
 
 ![build](https://github.com/kinoplan/swagger-play/workflows/build/badge.svg)
+[![Maven Central](https://img.shields.io/maven-central/v/io.kinoplan/swagger-play_2.13.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.kinoplan%22%20AND%20a:%22swagger-play_2.13%22)
 
 ## Overview
 
