@@ -33,6 +33,8 @@ lazy val root = project.in(file(".")).enablePlugins(ScalafixPlugin).settings(nam
   )
 
 inThisBuild(List(
+  sonatypeCredentialHost := Sonatype.sonatype01,
+  versionScheme := Some(VersionScheme.EarlySemVer),
   organization := "io.kinoplan",
   homepage := Some(url("https://github.com/kinoplan/swagger-play")),
   licenses := Seq("Apache-2.0" -> url("https://opensource.org/licenses/Apache-2.0")),
