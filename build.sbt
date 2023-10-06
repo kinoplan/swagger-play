@@ -3,6 +3,12 @@ ThisBuild / resolvers += "Artima Maven Repository".at("https://repo.artima.com/r
 val playVersion = "2.8.17"
 val swaggerVersion = "2.1.7"
 
+def scalaJava8Compat(scalaVersion: String) = "org.scala-lang.modules" %% "scala-java8-compat" %
+  (CrossVersion.partialVersion(scalaVersion) match {
+    case Some((2, major)) if major >= 13 => "1.0.2"
+    case _                               => "0.9.1"
+  })
+
 lazy val root = project.in(file(".")).enablePlugins(ScalafixPlugin).settings(name := "swagger-play")
   .settings(
     scalaVersion := "2.13.5",
@@ -18,10 +24,10 @@ lazy val root = project.in(file(".")).enablePlugins(ScalafixPlugin).settings(nam
       )))
   ).settings(
     libraryDependencies ++= Seq(
+      scalaJava8Compat(scalaVersion.value),
       "com.github.pureconfig"        %% "pureconfig"              % "0.17.1",
       "com.typesafe.play"            %% "play"                    % playVersion,
       "com.typesafe.play"            %% "routes-compiler"         % playVersion,
-      "org.scala-lang.modules"       %% "scala-java8-compat"      % "1.0.2",
       "org.scala-lang.modules"       %% "scala-collection-compat" % "2.4.3",
       "io.swagger.core.v3"            % "swagger-core"            % swaggerVersion,
       "io.swagger.core.v3"            % "swagger-annotations"     % swaggerVersion,
