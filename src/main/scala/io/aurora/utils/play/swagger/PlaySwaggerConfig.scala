@@ -9,8 +9,8 @@ import io.swagger.v3.oas.models.info.{
 }
 import io.swagger.v3.oas.models.servers.Server
 import org.apache.commons.lang3.StringUtils
-import pureconfig.generic.ProductHint
 import pureconfig.{CamelCase, ConfigFieldMapping, ConfigSource}
+import pureconfig.generic.ProductHint
 
 case class PlaySwaggerConfig(info: Info, host: String, basePath: String, schemes: Seq[String]) {
 

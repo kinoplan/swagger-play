@@ -10,7 +10,7 @@ wants all of its channels (GitHub, etc.) to be inclusive environments.
 You will need the following tools:
 
 *   [Git][git]
-*   [Java 8][java-8]
+*   [Java 17][java-17]
 *   [SBT][sbt]
 
 ## Workflow
@@ -72,7 +72,7 @@ then make the corrections and try again.
 
 [git]: https://git-scm.com/
 
-[java-8]: https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+[java-17]: https://openjdk.org/projects/jdk/17/
 
 [scalafix]: https://scalacenter.github.io/scalafix/
 

@@ -1,18 +1,11 @@
 ThisBuild / resolvers += "Artima Maven Repository".at("https://repo.artima.com/releases")
 
-val playVersion = "2.8.17"
-val swaggerVersion = "2.1.7"
-
-def scalaJava8Compat(scalaVersion: String) = "org.scala-lang.modules" %% "scala-java8-compat" %
-  (CrossVersion.partialVersion(scalaVersion) match {
-    case Some((2, major)) if major >= 13 => "1.0.2"
-    case _                               => "0.9.1"
-  })
+val playVersion = "3.0.6"
+val swaggerVersion = "2.2.28"
 
 lazy val root = project.in(file(".")).enablePlugins(ScalafixPlugin).settings(name := "swagger-play")
   .settings(
-    scalaVersion := "2.13.5",
-    crossScalaVersions := Seq("2.12.13", scalaVersion.value),
+    scalaVersion := "2.13.16",
     scalacOptions ~=
       (_.filterNot(Set(
         "-Wdead-code",
@@ -24,17 +17,16 @@ lazy val root = project.in(file(".")).enablePlugins(ScalafixPlugin).settings(nam
       )))
   ).settings(
     libraryDependencies ++= Seq(
-      scalaJava8Compat(scalaVersion.value),
-      "com.github.pureconfig"        %% "pureconfig"              % "0.17.1",
-      "com.typesafe.play"            %% "play"                    % playVersion,
-      "com.typesafe.play"            %% "routes-compiler"         % playVersion,
-      "org.scala-lang.modules"       %% "scala-collection-compat" % "2.4.3",
+      "com.github.pureconfig"        %% "pureconfig"              % "0.17.8",
+      "org.playframework"            %% "play"                    % playVersion,
+      "org.playframework"            %% "play-routes-compiler"    % playVersion,
+      "org.scala-lang.modules"       %% "scala-collection-compat" % "2.13.0",
       "io.swagger.core.v3"            % "swagger-core"            % swaggerVersion,
       "io.swagger.core.v3"            % "swagger-annotations"     % swaggerVersion,
       "io.swagger.core.v3"            % "swagger-models"          % swaggerVersion,
       "io.swagger.core.v3"            % "swagger-jaxrs2"          % swaggerVersion,
-      "com.github.swagger-akka-http" %% "swagger-scala-module"    % "2.3.0",
-      "javax.ws.rs"                   % "javax.ws.rs-api"         % "2.0.1"
+      "com.github.swagger-akka-http" %% "swagger-scala-module"    % "2.13.0",
+      "javax.ws.rs"                   % "javax.ws.rs-api"         % "2.1.1"
     )
   )
 

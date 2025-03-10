@@ -11,4 +11,3 @@ class RouteWrapper(var router: Map[String, Route]) {
 
   def getAll: Map[String, Route] = router
 }
-
