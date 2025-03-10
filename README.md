@@ -1,11 +1,11 @@
-# Swagger Play 2.8.x Module
+# Swagger Play 3.0.x Module
 
 ![build](https://github.com/kinoplan/swagger-play/workflows/build/badge.svg)
 [![Maven Central](https://img.shields.io/maven-central/v/io.kinoplan/swagger-play_2.13.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.kinoplan%22%20AND%20a:%22swagger-play_2.13%22)
 
 ## Overview
 
-This is a module to support Swagger within [Play Framework](http://www.playframework.org) controllers. It is based on the library https://github.com/swagger-api/swagger-play with several improvements. This library uses Swagger Core 2.X and Play 2.8. It can be used for both Scala and Java based applications.
+This is a module to support Swagger within [Play Framework](http://www.playframework.org) controllers. It is based on the library https://github.com/swagger-api/swagger-play with several improvements. This library uses Swagger Core 2.X and Play 3.0.6. It can be used for both Scala and Java based applications.
 
 ## Usage
 
@@ -23,9 +23,9 @@ Or you can build from source.
 sbt publishLocal
 ```
 
-### Adding Swagger to your Play2 app
+### Adding Swagger to your Play app
 
-There are just a couple steps to integrate your Play2 app with swagger.
+There are just a couple steps to integrate your Play app with swagger.
 
 1\. Add the Swagger module to your `application.conf`
  
